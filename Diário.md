@@ -14,3 +14,20 @@ Elton, Leo
 - Fazer a esfera seguir a mão
 - Ajustar a escala
 - Utilizar âncoras para colocar o jogo
+
+
+# 21-10-2022
+Elton, José, Leo
+
+- Adicionado componentes para o sistema avançado de hand tracking (QCHT)
+- Teste pegando e movendo um cubo para colidir com o disco
+- Alterado UI para ficar fixo na câmera
+
+## Próximos passos
+- Alterar colisão do rebatedor
+  - Criar script que coloca força quando colide com algo (manter ele trigger)
+- Alterar dinâmica do disco
+  - Não está rebatendo nas paredes
+  - Para de mexer muito rápido
+
+

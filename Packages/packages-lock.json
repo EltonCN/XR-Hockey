@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.qualcomm.qcht.unity.core": {
+      "version": "file:D:/Demo Snapdragon Spaces/Snapdragon_Spaces_SDK_for_Unity_0_8_1/Unity Package/Hand Tracking/QCHT_Core_Package_3_1_0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.inputsystem": "1.0.2"
+      }
+    },
+    "com.qualcomm.qcht.unity.interactions": {
+      "version": "file:D:/Demo Snapdragon Spaces/Snapdragon_Spaces_SDK_for_Unity_0_8_1/Unity Package/Hand Tracking/QCHT_Interactions_Package_3_3_2.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.qualcomm.qcht.unity.core": "3.1.0"
+      }
+    },
     "com.qualcomm.snapdragon.spaces": {
       "version": "file:D:/Demo Snapdragon Spaces/Snapdragon_Spaces_SDK_for_Unity_0_8_1/Unity Package/SnapdragonSpaces_Package_0_8_1.tgz",
       "depth": 0,
