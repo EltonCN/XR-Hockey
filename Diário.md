@@ -29,5 +29,5 @@ Elton, José, Leo
 - Alterar dinâmica do disco
   - Não está rebatendo nas paredes
   - Para de mexer muito rápido
-
+- Desabilitar colisão rebatedor-goleiro
 
