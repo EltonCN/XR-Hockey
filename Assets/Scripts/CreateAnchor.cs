@@ -41,6 +41,11 @@ public class CreateAnchor : MonoBehaviour
         ARPlane plane = hit.transform.gameObject.GetComponent<ARPlane>();
         Vector3 position = hit.point;
 
+        if(!haveReference)
+        {
+            ghostTarget.SetActive(true);
+        }
+
         if(plane == null)
         {
             return;
@@ -61,7 +66,7 @@ public class CreateAnchor : MonoBehaviour
             return;
         }
 
-        GameObject go = Instantiate(prefabToAttach, ghostTarget.transform.position, Quaternion.identity);
+        GameObject go = Instantiate(prefabToAttach, ghostTarget.transform.position, ghostTarget.transform.rotation);
         go.AddComponent<ARAnchor>();
 
         onCreate.Invoke(go);
