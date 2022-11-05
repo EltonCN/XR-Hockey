@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Hitter : MonoBehaviour
 {
+    [SerializeField] LayerMask hittableLayers;
+    [SerializeField] float multiplier = 1f;
     Vector3 previousPosition;
     float lastTime;
     Vector3 velocity;
@@ -30,13 +32,18 @@ public class Hitter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        float otherMass = other.attachedRigidbody.mass;
-        float mass = rb.mass;
+        if(other.gameObject.layer == 6)
+        {
+            float otherMass = other.attachedRigidbody.mass;
+            float mass = rb.mass;
+            
+            Vector3 otherVelocity = other.attachedRigidbody.velocity;
+
+            Vector3 posVelocity = otherVelocity + ((otherMass/mass)*velocity);
+            posVelocity *= multiplier;
+
+            other.attachedRigidbody.velocity = posVelocity;
+        }
         
-        Vector3 otherVelocity = other.attachedRigidbody.velocity;
-
-        Vector3 posVelocity = otherVelocity + ((otherMass/mass)*velocity);
-
-        other.attachedRigidbody.velocity = posVelocity;
     }
 }
