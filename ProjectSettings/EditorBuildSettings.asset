@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PhysicsTest.unity
-    guid: f9bcb4012ca288c4c946cbf4b22dc1dd
-  - enabled: 1
-    path: Assets/Scenes/PlaneAnchor.unity
-    guid: f09dfceb922cb45408d2519e6faf3374
+    path: Assets/Scenes/HitterTuning.unity
+    guid: 738b4a068f945da409c6376a53513c00
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a659e0f28bb31c8499e0ed0a2a08472d, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 869eb9596ac41064f8c62bda2fb8606c, type: 2}
