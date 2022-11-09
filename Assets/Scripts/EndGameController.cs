@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class EndGameController : MonoBehaviour
 {
-    [SerializeField] Rigidbody disk;
-
     [SerializeField] float maxTime;
     [SerializeField] int maxPoints;
     [SerializeField] IntVariable pointsVariable;
     [SerializeField] IntVariable lifesVariable;
+    [SerializeField] FloatVariable gameTimeVariable;
+    [SerializeField] GameObjectVariable activeDiskVariable;
+
 
     [SerializeField] UnityEvent winGameEvent;
     [SerializeField] UnityEvent looseGameEvent;
@@ -20,6 +21,10 @@ public class EndGameController : MonoBehaviour
 
     bool playing;
 
+    Rigidbody disk;
+
+    GameObject activeDisk;
+
     void Start()
     {
         gameTime = 0f;
@@ -28,6 +33,17 @@ public class EndGameController : MonoBehaviour
 
     void Update()
     {
+        if(activeDisk == null || ! GameObject.ReferenceEquals(activeDisk, activeDiskVariable.value))
+        {
+            playing = false;
+            activeDisk = activeDiskVariable.value;
+
+            if(activeDisk != null)
+            {
+                disk = activeDisk.GetComponent<Rigidbody>();
+            }
+        }
+
         if(disk != null && disk.velocity.sqrMagnitude > 0.0f)
         {
             playing = true;
@@ -40,9 +56,9 @@ public class EndGameController : MonoBehaviour
 
         checkForGameEnd();
 
-        lastUpdateTime = Time.time;
+        gameTimeVariable.value = gameTime;
 
-        print(playing.ToString()+" "+gameTime.ToString());
+        lastUpdateTime = Time.time;
     }
 
     void checkForGameEnd()
