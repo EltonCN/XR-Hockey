@@ -12,8 +12,7 @@ public class Defender : MonoBehaviour
     void Start()
     {
         localRight = transform.forward;
-
-        print(localRight);
+        
         camera = Camera.main;
         rb = GetComponent<Rigidbody>();
     }
@@ -22,17 +21,13 @@ public class Defender : MonoBehaviour
     {
         Vector3 this2camera = camera.transform.position - this.transform.position; //This to camera position vector
         Vector3 movement = Vector3.Dot(this2camera, localRight) * localRight; //Previous vector projected to right direction
-
-        print(this2camera.ToString()+ " | " + movement.ToString());
-
         Vector3 targetPosition = this.transform.position + movement; //Target position to match the camera in the right direction
 
-        Ray ray = new Ray(transform.position, movement);
         RaycastHit hit;
-
-       if(!rb.SweepTest(movement, out hit, movement.magnitude)) //Check if will not collide in anything
+        if(!rb.SweepTest(movement, out hit, movement.magnitude)) //Check if will not collide in anything
         {
-            rb.MovePosition(targetPosition);
+            //rb.MovePosition(targetPosition); Doesn't work. Wrong coordinate space?
+            transform.position = targetPosition;
         }
         
     }
