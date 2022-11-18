@@ -18,6 +18,7 @@ public class CreateAnchor : MonoBehaviour
     [SerializeField] UnityEvent<GameObject> onCreate;
 
     bool haveReference;
+    GameObject game;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,20 @@ public class CreateAnchor : MonoBehaviour
     void OnEnable()
     {
         createPrefabAction.action.performed += this.CreatePrefab;
+        FloatingPanelController.RestartGame += this.Restart;
     }
 
     void OnDisable()
     {
         createPrefabAction.action.performed -= this.CreatePrefab;
+        FloatingPanelController.RestartGame -= this.Restart;
+    }
+
+    public void Restart(object sender, EventArgs e)
+    {
+        Debug.Log("Reiniciando o game");
+        Destroy(game);
+        haveReference = false;
     }
 
     public void CreateAnchorOnHitPlane(RaycastHit hit)
@@ -70,6 +80,6 @@ public class CreateAnchor : MonoBehaviour
         go.AddComponent<ARAnchor>();
 
         onCreate.Invoke(go);
-
+        game = go;
     }
 }
