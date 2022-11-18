@@ -6,8 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HitterTuning.unity
-    guid: 738b4a068f945da409c6376a53513c00
+    path: Assets/Samples/Snapdragon Spaces/0.8.1/Core Samples/Scenes/Main Menu/Main
+      Menu.unity
+    guid: 2b406ea90420fc841839c843c6bfc3d5
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 56687e5a335254848b7a1f852789c6a8, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a659e0f28bb31c8499e0ed0a2a08472d, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 869eb9596ac41064f8c62bda2fb8606c, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 63d5c2ae36a32b74284371ddd2e5a455, type: 2}
