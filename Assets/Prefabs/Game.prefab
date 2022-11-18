@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7149856701098177142
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,18 +1073,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.49999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.10000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.49999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1127,10 +1115,6 @@ PrefabInstance:
     - target: {fileID: 195574311584685189, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_Name
       value: Hockey_Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 195574311584685189, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
