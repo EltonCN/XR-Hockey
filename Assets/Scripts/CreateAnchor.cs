@@ -19,9 +19,13 @@ public class CreateAnchor : MonoBehaviour
     
     [SerializeField] UnityEvent<GameObject> onCreateWithPlane;
 
+    [SerializeField] UnityEvent onRestoreWithPlane;
+
     [SerializeField] bool withoutPlaneMode;
 
     bool haveReference;
+
+    GameObject prefabInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -91,5 +95,18 @@ public class CreateAnchor : MonoBehaviour
             onCreateWithPlane.Invoke(go);
         }
 
+    }
+
+    public void RestorePositionSelection()
+    {
+        Destroy(prefabInstance);
+
+        haveReference = withoutPlaneMode;
+        ghostTarget.SetActive(haveReference);
+
+        if(!withoutPlaneMode)
+        {
+            onRestoreWithPlane.Invoke();
+        }
     }
 }

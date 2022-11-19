@@ -33,4 +33,12 @@ public class ARPlaneController : MonoBehaviour
             plane.gameObject.SetActive(false);
         }
     }
+
+    public void EnableAllPlaneObjects()
+    {
+        foreach (var plane in planeManager.trackables)
+        {
+            plane.gameObject.SetActive(true);
+        }
+    }
 }
