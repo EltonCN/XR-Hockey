@@ -13,15 +13,11 @@ public class CollisionReflect : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        /*if (LayerMask.LayerToName(collision.gameObject.layer) == "Table"  || LayerMask.LayerToName(collision.gameObject.layer) == "Player" || LayerMask.LayerToName(collision.gameObject.layer) == "Hitter" )
-        {*/
-            Vector3 collisionNormal = collision.contacts[0].normal;
+        Vector3 collisionNormal = collision.contacts[0].normal;
 
-            Vector3 newVelocity =  Vector3.Reflect(_rigidbody.velocity, collisionNormal);
+        Vector3 newVelocity =  Vector3.Reflect(_rigidbody.velocity, collisionNormal);
 
-            _rigidbody.velocity = newVelocity;
-       
-        //}
+        _rigidbody.velocity = newVelocity;
     }
 
 }
