@@ -148,7 +148,7 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
             /* The horizontal half on the device is a quarter since the rendered output is in stereo and
              * we only take the left eye's center for the sake of simplicity.
              */
-            float horizontalHalf = !Application.isEditor && _singlePassRenderMode ? 0.25f : 0.5f;
+            float horizontalHalf = 0.5f;
             float verticalHalf = 0.5f + 0.5f * VerticalBias;
             screenPoint = new Vector2(Screen.width * horizontalHalf, Screen.height * verticalHalf);
 

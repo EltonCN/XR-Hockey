@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
@@ -30,18 +27,18 @@ public class CreateAnchor : MonoBehaviour
     void OnEnable()
     {
         createPrefabAction.action.performed += this.CreatePrefab;
-        FloatingPanelController.RestartGame += this.Restart;
+        GameController.RestartGame += this.Restart;
     }
 
     void OnDisable()
     {
         createPrefabAction.action.performed -= this.CreatePrefab;
-        FloatingPanelController.RestartGame -= this.Restart;
+        GameController.RestartGame -= this.Restart;
     }
 
     public void Restart(object sender, EventArgs e)
     {
-        Debug.Log("Reiniciando o game");
+        Debug.Log("CreateAnchor restarting...");
         Destroy(game);
         haveReference = false;
     }
