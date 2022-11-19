@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class InitialForce : MonoBehaviour
+public class SetVelocity : MonoBehaviour
 {
-    [SerializeField] Vector3 force;
+    [SerializeField] Vector3 velocity;
     [SerializeField] float delay = 1f;
 
     Rigidbody rb;
@@ -32,7 +32,7 @@ public class InitialForce : MonoBehaviour
 
         if(Time.time - startTime > delay)
         {
-            rb.AddForce(force, ForceMode.Impulse);
+            rb.velocity = velocity;
             done = true;
 
             this.enabled = false;

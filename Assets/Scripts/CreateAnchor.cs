@@ -15,7 +15,11 @@ public class CreateAnchor : MonoBehaviour
 
     [SerializeField] InputActionReference createPrefabAction;
 
-    [SerializeField] UnityEvent<GameObject> onCreate;
+    [SerializeField] UnityEvent<GameObject> onCreateBothModes;
+    
+    [SerializeField] UnityEvent<GameObject> onCreateWithPlane;
+
+    [SerializeField] bool withoutPlaneMode;
 
     bool haveReference;
 
@@ -23,6 +27,12 @@ public class CreateAnchor : MonoBehaviour
     void Start()
     {
         haveReference = false;
+
+        if(withoutPlaneMode)
+        {
+            haveReference = true;
+            ghostTarget.SetActive(true);
+        }
         
     }
 
@@ -38,8 +48,14 @@ public class CreateAnchor : MonoBehaviour
 
     public void CreateAnchorOnHitPlane(RaycastHit hit)
     {
+        if(withoutPlaneMode)
+        {
+            return;
+        }
+
         ARPlane plane = hit.transform.gameObject.GetComponent<ARPlane>();
         Vector3 position = hit.point;
+
 
         if(!haveReference)
         {
@@ -61,7 +77,7 @@ public class CreateAnchor : MonoBehaviour
 
     public void CreatePrefab(InputAction.CallbackContext context)
     {
-        if(!haveReference)
+        if((!haveReference && !withoutPlaneMode) || this.enabled == false)
         {
             return;
         }
@@ -69,7 +85,11 @@ public class CreateAnchor : MonoBehaviour
         GameObject go = Instantiate(prefabToAttach, ghostTarget.transform.position, ghostTarget.transform.rotation);
         go.AddComponent<ARAnchor>();
 
-        onCreate.Invoke(go);
+        onCreateBothModes.Invoke(go);
+        if(!withoutPlaneMode)
+        {
+            onCreateWithPlane.Invoke(go);
+        }
 
     }
 }
