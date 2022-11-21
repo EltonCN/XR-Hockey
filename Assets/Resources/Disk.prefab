@@ -102,15 +102,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.048
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.096
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.7883298
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685189, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_Name
-      value: Disk2
+      value: Disk
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685191, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_Enabled
@@ -190,41 +190,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2093679471
+--- !u!114 &3598813033534406540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d23836a75dcdf4cb726551bafe29c1, type: 3}
+  m_Script: {fileID: 11500000, guid: fcccd32d13c52c04d927497afe5fb32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: 3372fc6091d2bb54ab3671487dd1f6f0, type: 2}
-  onEnableValue: {fileID: 8895323092688839738}
---- !u!114 &2093679472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67184d110c37fd841a408258eb6544be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
+  force: {x: 0.1, y: 0, z: 0}
   delay: 1
-  randomVelocitySettings:
-    randomVelocity: 1
-    randomMagnitudeMin: 1
-    randomMagnitudeMax: 3
-    randomAngleMin: -25
-    randomAngleMax: 25
-    rotationAxis: 1
 --- !u!114 &3973564721139404644
 MonoBehaviour:
   m_ObjectHideFlags: 0
