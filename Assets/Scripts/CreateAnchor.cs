@@ -30,14 +30,7 @@ public class CreateAnchor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        haveReference = false;
-
-        if(withoutPlaneMode)
-        {
-            haveReference = true;
-            ghostTarget.SetActive(true);
-        }
-        
+        haveReference = withoutPlaneMode;
     }
 
     void OnEnable()
@@ -50,6 +43,14 @@ public class CreateAnchor : MonoBehaviour
         createPrefabAction.action.performed -= this.CreatePrefab;
     }
 
+    void Update()
+    {
+        if(haveReference)
+            ghostTarget.SetActive(true);
+        else
+            ghostTarget.SetActive(false);
+    }
+
     public void CreateAnchorOnHitPlane(RaycastHit hit)
     {
         if(withoutPlaneMode)
@@ -60,12 +61,6 @@ public class CreateAnchor : MonoBehaviour
         ARPlane plane = hit.transform.gameObject.GetComponent<ARPlane>();
         Vector3 position = hit.point;
 
-
-        if(!haveReference)
-        {
-            ghostTarget.SetActive(true);
-        }
-
         if(plane == null)
         {
             return;
@@ -74,7 +69,6 @@ public class CreateAnchor : MonoBehaviour
         {
             ghostTarget.transform.position = position;
             haveReference = true;
-            
         }
 
     }
@@ -86,15 +80,13 @@ public class CreateAnchor : MonoBehaviour
             return;
         }
 
-        GameObject go = Instantiate(prefabToAttach, ghostTarget.transform.position, ghostTarget.transform.rotation);
-        go.AddComponent<ARAnchor>();
+        prefabInstance = Instantiate(prefabToAttach, ghostTarget.transform.position, ghostTarget.transform.rotation);
+        prefabInstance.AddComponent<ARAnchor>();
 
-        onCreateBothModes.Invoke(go);
         if(!withoutPlaneMode)
-        {
-            onCreateWithPlane.Invoke(go);
-        }
+            onCreateWithPlane.Invoke(prefabInstance);
 
+        onCreateBothModes.Invoke(prefabInstance);
     }
 
     public void RestorePositionSelection()
@@ -105,8 +97,6 @@ public class CreateAnchor : MonoBehaviour
         ghostTarget.SetActive(haveReference);
 
         if(!withoutPlaneMode)
-        {
             onRestoreWithPlane.Invoke();
-        }
     }
 }
