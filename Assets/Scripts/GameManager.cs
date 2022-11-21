@@ -10,12 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform diskSpawn;
     [SerializeField] GameObject diskPrefab;
     [SerializeField] Transform playerSpawn;
+    [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform computerSpawn;
     [SerializeField] int maxLifes;
     [SerializeField] IntVariable pointsVariable;
     [SerializeField] IntVariable lifesVariable;
-
-    private GameObject playerPrefab;
     private GameObject computerPrefab;
     private GameObject disk;
     private GameObject player;
@@ -23,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        playerPrefab = Resources.Load("Player") as GameObject;
         computerPrefab = Resources.Load("Computer") as GameObject;
     }
 
