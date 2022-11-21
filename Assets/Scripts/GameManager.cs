@@ -5,16 +5,16 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject ui;
-    [SerializeField] private TextMeshProUGUI diskCountdownText;
-    [SerializeField] private Transform ballSpawn;
-    [SerializeField] private Transform playerSpawn;
-    [SerializeField] private Transform computerSpawn;
-    [SerializeField] private int maxLifes;
+    [SerializeField] GameObject ui;
+    [SerializeField] TextMeshProUGUI diskCountdownText;
+    [SerializeField] Transform diskSpawn;
+    [SerializeField] GameObject diskPrefab;
+    [SerializeField] Transform playerSpawn;
+    [SerializeField] Transform computerSpawn;
+    [SerializeField] int maxLifes;
     [SerializeField] IntVariable pointsVariable;
     [SerializeField] IntVariable lifesVariable;
 
-    private GameObject diskPrefab;
     private GameObject playerPrefab;
     private GameObject computerPrefab;
     private GameObject disk;
@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        diskPrefab = Resources.Load("Disk") as GameObject;
         playerPrefab = Resources.Load("Player") as GameObject;
         computerPrefab = Resources.Load("Computer") as GameObject;
     }
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
         }
         
         ui.SetActive(false);
-        disk = Instantiate(diskPrefab, ballSpawn);
+        disk = Instantiate(diskPrefab, diskSpawn);
     }
 
     public void Goal(bool isGoalPlayer)

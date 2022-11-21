@@ -102,27 +102,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.080556005
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0161112
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.080556005
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02267021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.088
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -190,19 +190,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3973564721139404644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718e2194f58564a4096e5b7bbcd63d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 25
 --- !u!114 &2093679471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +225,16 @@ MonoBehaviour:
     randomAngleMin: -25
     randomAngleMax: 25
     rotationAxis: 1
+--- !u!114 &3973564721139404644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895323092688839738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718e2194f58564a4096e5b7bbcd63d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocity: 25
