@@ -93,6 +93,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 195574311584685184, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195574311584685184, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 195574311584685184, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
@@ -237,4 +245,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718e2194f58564a4096e5b7bbcd63d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 25
+  minVelocity: 1
+  maxVelocity: 3
