@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6571054971327635454}
   - component: {fileID: 6571054971327635441}
   - component: {fileID: 6571054971327635440}
-  - component: {fileID: 6571054971327635455}
   - component: {fileID: 6571054971327635443}
   m_Layer: 0
   m_Name: EndGame
@@ -61,20 +60,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: ed1e01e71c0b72647bd90b078e743274, type: 2}
-  onEnableValue: 0
---- !u!114 &6571054971327635455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571054971327635442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ebe46bd1dc4584a838ff532ae78be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: c57dd10965473df4f8fd27ee6b2e24a8, type: 2}
   onEnableValue: 0
 --- !u!114 &6571054971327635443
 MonoBehaviour:
