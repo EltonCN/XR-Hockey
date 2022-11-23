@@ -27,7 +27,8 @@ public class EndGameController : MonoBehaviour
 
     void Start()
     {
-        gameTime = 0f;
+        gameTime = maxTime;
+        gameTimeVariable.value = gameTime;
         lastUpdateTime = Time.time;
     }
 
@@ -51,7 +52,7 @@ public class EndGameController : MonoBehaviour
 
         if(playing)
         {
-            gameTime += Time.time - lastUpdateTime;
+            gameTime -= Time.time - lastUpdateTime;
         }
 
         checkForGameEnd();
@@ -67,7 +68,7 @@ public class EndGameController : MonoBehaviour
         {
             winGameEvent.Invoke();
         }
-        else if(gameTime > maxTime || lifesVariable.value == 0)
+        else if(gameTime <= 0 || lifesVariable.value == 0)
         {
             looseGameEvent.Invoke();
         }
