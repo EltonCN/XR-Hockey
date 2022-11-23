@@ -259,6 +259,9 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: -4789776149748543424, guid: 869eb9596ac41064f8c62bda2fb8606c, type: 2}
+  - {fileID: 8213720948723421534, guid: a659e0f28bb31c8499e0ed0a2a08472d, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -371,14 +374,14 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: D:/Demo Snapdragon Spaces/KEY_UNITY_ANDROID_DONTUPLOAD_DONTDELETE.keystore
-  AndroidKeyaliasName: Debug
+  AndroidKeyaliasName: hockey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
