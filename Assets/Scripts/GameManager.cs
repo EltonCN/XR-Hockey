@@ -5,7 +5,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject ui;
     [SerializeField] TextMeshProUGUI diskCountdownText;
     [SerializeField] Transform diskSpawn;
     [SerializeField] GameObject diskPrefab;
@@ -47,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DiskCountdown()
     {
-        ui.SetActive(true);
+        diskCountdownText.gameObject.SetActive(true);
         for(int i = 3; i > 0; i--)
         {
             diskCountdownText.text = i.ToString();
@@ -59,17 +58,9 @@ public class GameManager : MonoBehaviour
         disk = Instantiate(diskPrefab, diskSpawn);
     }
 
-    public void Goal(bool isGoalPlayer)
+    public void Goal()
     {
-        if (isGoalPlayer)
-        {
-            pointsVariable.value++;
-        }
-        else
-        {
-            lifesVariable.value--;
-        }
-
+        Destroy(disk);
         StartCoroutine(DiskCountdown());
     }
 
