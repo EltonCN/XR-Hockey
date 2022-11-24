@@ -7,6 +7,7 @@ public class EndGameController : MonoBehaviour
 {
     [SerializeField] float maxTime;
     [SerializeField] int maxPoints;
+    [SerializeField] int maxLifes;
     [SerializeField] IntVariable pointsVariable;
     [SerializeField] IntVariable lifesVariable;
     [SerializeField] FloatVariable gameTimeVariable;
@@ -16,7 +17,6 @@ public class EndGameController : MonoBehaviour
     [SerializeField] UnityEvent winGameEvent;
     [SerializeField] UnityEvent looseGameEvent;
 
-    float gameTime;
     float lastUpdateTime;
 
     bool playing;
@@ -27,8 +27,7 @@ public class EndGameController : MonoBehaviour
 
     void Start()
     {
-        gameTime = maxTime;
-        gameTimeVariable.value = gameTime;
+        RestartVariables();
         lastUpdateTime = Time.time;
     }
 
@@ -52,12 +51,10 @@ public class EndGameController : MonoBehaviour
 
         if(playing)
         {
-            gameTime -= Time.time - lastUpdateTime;
+            gameTimeVariable.value -= Time.time - lastUpdateTime;
         }
 
         checkForGameEnd();
-
-        gameTimeVariable.value = gameTime;
 
         lastUpdateTime = Time.time;
     }
@@ -68,11 +65,18 @@ public class EndGameController : MonoBehaviour
         {
             winGameEvent.Invoke();
         }
-        else if(gameTime <= 0 || lifesVariable.value == 0)
+        else if(gameTimeVariable.value <= 0 || lifesVariable.value == 0)
         {
             looseGameEvent.Invoke();
         }
         
+    }
+
+    public void RestartVariables()
+    {
+        pointsVariable.value = 0;
+        lifesVariable.value = maxLifes;
+        gameTimeVariable.value = maxTime;
     }
 
 }

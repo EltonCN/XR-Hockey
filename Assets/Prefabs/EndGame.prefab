@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6571054971327635454}
-  - component: {fileID: 6571054971327635441}
-  - component: {fileID: 6571054971327635440}
   - component: {fileID: 6571054971327635443}
+  - component: {fileID: 136871397}
   m_Layer: 0
   m_Name: EndGame
   m_TagString: Untagged
@@ -33,34 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6571054971327635441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571054971327635442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc20eae0fd46dc4f849c98d85eac991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: ca87eb1a2edf690459457daee444e12c, type: 2}
-  onEnableValue: 3
---- !u!114 &6571054971327635440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571054971327635442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc20eae0fd46dc4f849c98d85eac991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: ed1e01e71c0b72647bd90b078e743274, type: 2}
-  onEnableValue: 0
 --- !u!114 &6571054971327635443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 120
   maxPoints: 3
+  maxLifes: 3
   pointsVariable: {fileID: 11400000, guid: ed1e01e71c0b72647bd90b078e743274, type: 2}
   lifesVariable: {fileID: 11400000, guid: ca87eb1a2edf690459457daee444e12c, type: 2}
   gameTimeVariable: {fileID: 11400000, guid: c57dd10965473df4f8fd27ee6b2e24a8, type: 2}
@@ -85,3 +57,31 @@ MonoBehaviour:
   looseGameEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &136871397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571054971327635442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a6ff3b57f2ad043ac64cc3140e0c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f0b856eb43632554082988d48c59f68e, type: 2}
+  OnGameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6571054971327635443}
+        m_TargetAssemblyTypeName: EndGameController, Assembly-CSharp
+        m_MethodName: RestartVariables
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
