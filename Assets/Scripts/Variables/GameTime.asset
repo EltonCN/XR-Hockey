@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8501f51be7878e4fb63515afadc1017, type: 3}
   m_Name: GameTime
   m_EditorClassIdentifier: 
-  value: 0
+  value: 120
