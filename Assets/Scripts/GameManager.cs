@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
         
         player = Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         computer = Instantiate(computerPrefab, computerSpawn.position, computerSpawn.rotation);
+        
+        player.transform.parent = this.transform;
+        computer.transform.parent = this.transform;
+
 
         StartCoroutine(DiskCountdown());
     }
