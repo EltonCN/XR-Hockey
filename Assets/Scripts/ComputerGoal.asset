@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8501f51be7878e4fb63515afadc1017, type: 3}
-  m_Name: GameTime
+  m_Script: {fileID: 11500000, guid: aec24efb9cb040942a6799a50d95e8b4, type: 3}
+  m_Name: ComputerGoal
   m_EditorClassIdentifier: 
-  value: 120

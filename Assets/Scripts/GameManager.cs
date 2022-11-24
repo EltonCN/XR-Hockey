@@ -5,20 +5,19 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject ui;
     [SerializeField] TextMeshProUGUI diskCountdownText;
     [SerializeField] Transform diskSpawn;
     [SerializeField] GameObject diskPrefab;
     [SerializeField] Transform playerSpawn;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform computerSpawn;
-    [SerializeField] int maxLifes;
-    [SerializeField] IntVariable pointsVariable;
-    [SerializeField] IntVariable lifesVariable;
+    
     private GameObject computerPrefab;
     private GameObject disk;
     private GameObject player;
     private GameObject computer;
+
+    bool respawningDisk;
 
     void Awake()
     {
@@ -28,6 +27,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Restart();
+        respawningDisk = false;
     }
 
     public void Restart()
@@ -35,9 +35,6 @@ public class GameManager : MonoBehaviour
         Destroy(player);
         Destroy(computer);
         Destroy(disk);
-
-        pointsVariable.value = 0;
-        lifesVariable.value = maxLifes;
         
         player = Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         computer = Instantiate(computerPrefab, computerSpawn.position, computerSpawn.rotation);
@@ -47,7 +44,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DiskCountdown()
     {
-        ui.SetActive(true);
+        if(respawningDisk)
+        {
+            yield break;
+        }
+
+        respawningDisk = true;
+        diskCountdownText.gameObject.SetActive(true);
         for(int i = 3; i > 0; i--)
         {
             diskCountdownText.text = i.ToString();
@@ -57,19 +60,13 @@ public class GameManager : MonoBehaviour
         diskCountdownText.gameObject.SetActive(false);
 
         disk = Instantiate(diskPrefab, diskSpawn);
+
+        respawningDisk = false;
     }
 
-    public void Goal(bool isGoalPlayer)
+    public void Goal()
     {
-        if (isGoalPlayer)
-        {
-            pointsVariable.value++;
-        }
-        else
-        {
-            lifesVariable.value--;
-        }
-
+        Destroy(disk);
         StartCoroutine(DiskCountdown());
     }
 
