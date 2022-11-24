@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     private GameObject computer;
 
+    bool respawningDisk;
+
     void Awake()
     {
         computerPrefab = Resources.Load("Computer") as GameObject;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Restart();
+        respawningDisk = false;
     }
 
     public void Restart()
@@ -46,6 +49,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DiskCountdown()
     {
+        if(respawningDisk)
+        {
+            yield break;
+        }
+
+        respawningDisk = true;
         diskCountdownText.gameObject.SetActive(true);
         for(int i = 3; i > 0; i--)
         {
@@ -56,6 +65,8 @@ public class GameManager : MonoBehaviour
         diskCountdownText.gameObject.SetActive(false);
 
         disk = Instantiate(diskPrefab, diskSpawn);
+
+        respawningDisk = false;
     }
 
     public void Goal()

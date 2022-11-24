@@ -259,6 +259,8 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: -4789776149748543424, guid: 869eb9596ac41064f8c62bda2fb8606c, type: 2}
   - {fileID: 8213720948723421534, guid: a659e0f28bb31c8499e0ed0a2a08472d, type: 2}
   - {fileID: 0}
@@ -381,7 +383,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
