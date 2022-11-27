@@ -25,11 +25,14 @@ public class GameManager : MonoBehaviour
         respawningDisk = false;
     }
 
+    void OnEnable()
+    {
+        respawningDisk = false;
+    }
+
     public void Restart()
     {
-        Destroy(player);
-        Destroy(computer);
-        Destroy(disk);
+        DestroyElements();
         
         player = Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         computer = Instantiate(computerPrefab, computerSpawn.position, computerSpawn.rotation);
@@ -69,5 +72,17 @@ public class GameManager : MonoBehaviour
         StartCoroutine(DiskCountdown());
     }
 
+    public void DestroyElements()
+    {
+        GameObject[] elements = {player, computer, disk};
+
+        foreach(GameObject go in elements)
+        {
+            if(go != null)
+            {
+                Destroy(go);
+            }
+        }
+    }
 
 }
