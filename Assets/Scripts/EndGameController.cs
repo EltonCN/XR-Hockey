@@ -12,22 +12,22 @@ public class EndGameController : MonoBehaviour
     [SerializeField] IntVariable lifesVariable;
     [SerializeField] FloatVariable gameTimeVariable;
     [SerializeField] GameObjectVariable activeDiskVariable;
-
+    [SerializeField] float countdownAudioStart;
+    [SerializeField] AudioSource countdownAudio;
 
     [SerializeField] UnityEvent winGameEvent;
     [SerializeField] UnityEvent looseGameEvent;
 
     float lastUpdateTime;
-
     bool playing;
-
+    bool endGame;
     Rigidbody disk;
-
     GameObject activeDisk;
 
     void Start()
     {
         RestartVariables();
+        countdownAudio.Stop();
         lastUpdateTime = Time.time;
     }
 
@@ -44,14 +44,20 @@ public class EndGameController : MonoBehaviour
             }
         }
 
-        if(disk != null && disk.velocity.sqrMagnitude > 0.0f)
+        if(disk != null && disk.velocity.sqrMagnitude > 0.0f && ! endGame)
         {
             playing = true;
         }   
 
-        if(playing)
+        if(playing && ! endGame)
         {
             gameTimeVariable.value -= Time.time - lastUpdateTime;
+            if(gameTimeVariable.value <= countdownAudioStart && ! countdownAudio.isPlaying)
+                countdownAudio.Play();
+        }
+        else if(countdownAudio.isPlaying)
+        {
+            countdownAudio.Pause();
         }
 
         checkForGameEnd();
@@ -63,10 +69,12 @@ public class EndGameController : MonoBehaviour
     {
         if(pointsVariable.value > maxPoints)
         {
+            endGame = true;
             winGameEvent.Invoke();
         }
         else if(gameTimeVariable.value <= 0 || lifesVariable.value == 0)
         {
+            endGame = true;
             looseGameEvent.Invoke();
         }
         
@@ -77,6 +85,7 @@ public class EndGameController : MonoBehaviour
         pointsVariable.value = 0;
         lifesVariable.value = maxLifes;
         gameTimeVariable.value = maxTime;
+        endGame = false;
     }
 
 }
