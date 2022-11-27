@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
 
         respawningDisk = true;
-        diskCountdownText.gameObject.SetActive(true);
+        diskCountdownText.gameObject.transform.parent.gameObject.SetActive(true);
 
         if(restartAudio != null)
         {
@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
         }
         
         diskCountdownText.gameObject.transform.parent.gameObject.SetActive(false);
-        //diskCountdownText.gameObject.SetActive(false);
 
         disk = Instantiate(diskPrefab, diskSpawn);
 

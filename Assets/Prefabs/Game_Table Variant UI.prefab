@@ -365,9 +365,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2cef09c660f09144abfd681d0b57a05d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba28941d20f895845be3ac78ffb16898, type: 2}
   m_sharedMaterial: {fileID: 415677086119215465, guid: ba28941d20f895845be3ac78ffb16898, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1334541965, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
       propertyPath: m_text
-      value: 120
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: 1334541965, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
       propertyPath: m_fontAsset
@@ -606,6 +606,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.14
       objectReference: {fileID: 0}
+    - target: {fileID: 2580413892034751630, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4694407
+      objectReference: {fileID: 0}
     - target: {fileID: 2587393846432177242, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -626,6 +630,22 @@ PrefabInstance:
       propertyPath: diskCountdownText
       value: 
       objectReference: {fileID: 1943529490}
+    - target: {fileID: 5669651510028221208, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669651510028221208, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669651510028221208, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669651510028221208, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5845927501630108428, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -677,6 +697,18 @@ PrefabInstance:
     - target: {fileID: 5845927501630108431, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524958037436197414, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: onGoal
+      value: 
+      objectReference: {fileID: 11400000, guid: 62e72a72248ffb64e834c9530249aab6, type: 2}
+    - target: {fileID: 6982494149179182779, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: onGoal
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bbcdc1bc86cf1e4ea02ec3e17c25af1, type: 2}
+    - target: {fileID: 7103013016102170777, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.731109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1222b31fe34e7a2479f15a28c4c55ad9, type: 3}
