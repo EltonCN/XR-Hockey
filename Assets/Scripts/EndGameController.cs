@@ -67,7 +67,7 @@ public class EndGameController : MonoBehaviour
 
     void checkForGameEnd()
     {
-        if(pointsVariable.value > maxPoints)
+        if(pointsVariable.value >= maxPoints)
         {
             endGame = true;
             winGameEvent.Invoke();

@@ -54,7 +54,12 @@ public class GameManager : MonoBehaviour
 
         respawningDisk = true;
         diskCountdownText.gameObject.SetActive(true);
-        restartAudio.Play();
+
+        if(restartAudio != null)
+        {
+            restartAudio.Play();
+        }
+        
         for(int i = 3; i > 0; i--)
         {
             diskCountdownText.text = i.ToString();
