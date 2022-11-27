@@ -166,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685189, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_Name
-      value: Disk2 Variant
+      value: Disk2
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685191, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_Enabled
@@ -198,55 +198,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2093679471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d23836a75dcdf4cb726551bafe29c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: 3372fc6091d2bb54ab3671487dd1f6f0, type: 2}
-  onEnableValue: {fileID: 8895323092688839738}
---- !u!114 &2093679472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67184d110c37fd841a408258eb6544be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  delay: 1
-  randomVelocitySettings:
-    randomVelocity: 1
-    randomMagnitudeMin: 1
-    randomMagnitudeMax: 3
-    randomAngleMin: -25
-    randomAngleMax: 25
-    rotationAxis: 1
---- !u!114 &3973564721139404644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895323092688839738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718e2194f58564a4096e5b7bbcd63d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minVelocity: 1
-  maxVelocity: 3
 --- !u!82 &831942781375248074
 AudioSource:
   m_ObjectHideFlags: 0
@@ -343,6 +294,55 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2093679471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895323092688839738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d23836a75dcdf4cb726551bafe29c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: 3372fc6091d2bb54ab3671487dd1f6f0, type: 2}
+  onEnableValue: {fileID: 8895323092688839738}
+--- !u!114 &2093679472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895323092688839738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67184d110c37fd841a408258eb6544be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  delay: 1
+  randomVelocitySettings:
+    randomVelocity: 1
+    randomMagnitudeMin: 1
+    randomMagnitudeMax: 3
+    randomAngleMin: -25
+    randomAngleMax: 25
+    rotationAxis: 1
+--- !u!114 &3973564721139404644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895323092688839738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718e2194f58564a4096e5b7bbcd63d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minVelocity: 1
+  maxVelocity: 3
 --- !u!114 &8393575956967789146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,3 +355,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28f76732c15b934cbed81dddf4177a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreTags:
+  - Table

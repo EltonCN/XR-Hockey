@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(AudioSource))]
 public class PlayAudioOnHit : MonoBehaviour
 {
     private AudioSource audioSource;
+    [SerializeField] string[] ignoreTags;
 
     void Awake()
     {
@@ -14,7 +14,7 @@ public class PlayAudioOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Table")
+        if (! ignoreTags.Contains(collision.gameObject.tag))
             audioSource.Play();
     }
 }
