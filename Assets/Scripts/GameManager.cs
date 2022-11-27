@@ -26,11 +26,14 @@ public class GameManager : MonoBehaviour
         respawningDisk = false;
     }
 
+    void OnEnable()
+    {
+        respawningDisk = false;
+    }
+
     public void Restart()
     {
-        Destroy(player);
-        Destroy(computer);
-        Destroy(disk);
+        DestroyElements();
         
         player = Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         computer = Instantiate(computerPrefab, computerSpawn.position, computerSpawn.rotation);
@@ -51,7 +54,12 @@ public class GameManager : MonoBehaviour
 
         respawningDisk = true;
         diskCountdownText.gameObject.SetActive(true);
-        restartAudio.Play();
+
+        if(restartAudio != null)
+        {
+            restartAudio.Play();
+        }
+        
         for(int i = 3; i > 0; i--)
         {
             diskCountdownText.text = i.ToString();
@@ -71,5 +79,17 @@ public class GameManager : MonoBehaviour
         StartCoroutine(DiskCountdown());
     }
 
+    public void DestroyElements()
+    {
+        GameObject[] elements = {player, computer, disk};
+
+        foreach(GameObject go in elements)
+        {
+            if(go != null)
+            {
+                Destroy(go);
+            }
+        }
+    }
 
 }
