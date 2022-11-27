@@ -66,7 +66,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
         }
         
-        diskCountdownText.gameObject.SetActive(false);
+        diskCountdownText.gameObject.transform.parent.gameObject.SetActive(false);
+        //diskCountdownText.gameObject.SetActive(false);
 
         disk = Instantiate(diskPrefab, diskSpawn);
 
