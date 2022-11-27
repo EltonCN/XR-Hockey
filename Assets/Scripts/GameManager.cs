@@ -10,19 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject diskPrefab;
     [SerializeField] Transform playerSpawn;
     [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject computerPrefab;
     [SerializeField] Transform computerSpawn;
     
-    private GameObject computerPrefab;
     private GameObject disk;
     private GameObject player;
     private GameObject computer;
 
     bool respawningDisk;
-
-    void Awake()
-    {
-        computerPrefab = Resources.Load("Computer") as GameObject;
-    }
 
     void Start()
     {

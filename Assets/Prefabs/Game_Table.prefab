@@ -1132,6 +1132,7 @@ MonoBehaviour:
   diskPrefab: {fileID: 8895323092688839738, guid: ba63ac5964791c8438dd6c19c5fe0e9a, type: 3}
   playerSpawn: {fileID: 4754695243936366008}
   playerPrefab: {fileID: 2799884799703980136, guid: 65d6e0a5106fcc74296ff15c5a14cced, type: 3}
+  computerPrefab: {fileID: 2799884799703980136, guid: e1369493fa0b55d4da0d761da6239d65, type: 3}
   computerSpawn: {fileID: 3386979413680345726}
 --- !u!114 &913435546
 MonoBehaviour:
