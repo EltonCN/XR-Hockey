@@ -1,5 +1,4 @@
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody))]
 public class Computer : MonoBehaviour
 {
@@ -7,6 +6,8 @@ public class Computer : MonoBehaviour
     [SerializeField] float velocity = 0.3f;
     Vector3 localRight;
     Rigidbody rb;
+    Vector3 offset = new Vector3(0,0,0);
+    public float K = 0.2f;
 
     /*private readonly float  _cumulativeErrorLimit;
     private float  _cumulativeError;
@@ -24,12 +25,22 @@ public class Computer : MonoBehaviour
         localRight = transform.forward;
         
         rb = GetComponent<Rigidbody>();
+        
     }
 
     void FixedUpdate()
     {
         if (diskVariable.value != null)
         {
+            
+            float rand_x = K * Mathf.Cos(Time.time);
+            float rand_y = K * Mathf.Cos(Time.time +  (Mathf.PI/2));
+            float rand_z = K * Mathf.Cos(Time.time +  Mathf.PI);
+            
+            //float rand_x = Random.Range(-0.1f, 0.1f);
+            //float rand_y = Random.Range(-0.1f, 0.1f);
+            //float rand_z = Random.Range(-0.1f, 0.1f);
+
             /*Vector3 this2camera = diskVariable.value.transform.position - this.transform.position; //This to camera position vector
             Vector3 movement = Vector3.Dot(this2camera, localRight) * localRight; //Previous vector projected to right direction
             Vector3 targetPosition = this.transform.position + movement; //Target position to match the camera in the right direction
@@ -40,9 +51,20 @@ public class Computer : MonoBehaviour
                  //rb.MovePosition(targetPosition); Doesn't work. Wrong coordinate space?
                  transform.position = targetPosition;
             }*/
+            offset.x = rand_x;
+            offset.y = rand_y;
+            offset.z = rand_z;
 
             Vector3 this2disk = diskVariable.value.transform.position - this.transform.position;
-            if(Vector3.Dot(this2disk, localRight) > 0)
+            this2disk = this2disk + offset;
+             
+            float distance = Vector3.Dot(this2disk, localRight);
+
+            if(Mathf.Abs(distance) < 0.01f)
+            {
+                rb.velocity = Vector3.zero;
+            }
+            else if(distance > 0)
             {
                 rb.velocity = velocity*localRight;
             }
