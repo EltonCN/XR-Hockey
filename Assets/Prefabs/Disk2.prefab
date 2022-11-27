@@ -110,15 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.418465
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.049865823
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.418465
       objectReference: {fileID: 0}
     - target: {fileID: 195574311584685185, guid: 290f723ed1faa6d419d0ac18177f68c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -325,7 +325,7 @@ MonoBehaviour:
   randomVelocitySettings:
     randomVelocity: 1
     randomMagnitudeMin: 1
-    randomMagnitudeMax: 3
+    randomMagnitudeMax: 2
     randomAngleMin: 155
     randomAngleMax: 205
     rotationAxis: 1
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minVelocity: 1
-  maxVelocity: 3
+  maxVelocity: 2
 --- !u!114 &8393575956967789146
 MonoBehaviour:
   m_ObjectHideFlags: 0
