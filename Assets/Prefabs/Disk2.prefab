@@ -326,8 +326,8 @@ MonoBehaviour:
     randomVelocity: 1
     randomMagnitudeMin: 1
     randomMagnitudeMax: 3
-    randomAngleMin: -25
-    randomAngleMax: 25
+    randomAngleMin: 155
+    randomAngleMax: 205
     rotationAxis: 1
 --- !u!114 &3973564721139404644
 MonoBehaviour:
