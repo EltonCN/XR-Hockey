@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UnicampAd
+  m_Name: UnicampAd 1
   m_Shader: {fileID: -6465566751694194690, guid: c7898e4c5db8e8c4faa2f66dea8304a9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -43,7 +43,7 @@ Material:
     - Boolean_537fc2522a854d9492aa9be84d6b367d: 1
     - Vector1_0c1339c78e6b4e4e851812010e7bdf8f: 90
     - Vector1_3b86967d8f5d481dab528f4ff6ee1830: 0.025
-    - Vector1_5e607954a4e24888829b7aeb697a9737: 6
+    - Vector1_5e607954a4e24888829b7aeb697a9737: 2.75
     - Vector1_b1d73840519e45919e6c2d36b000b4e7: 0.1
     m_Colors: []
   m_BuildTextureStacks: []
