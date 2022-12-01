@@ -4,6 +4,7 @@ public class Computer : MonoBehaviour
 {
     [SerializeField] GameObjectVariable diskVariable;
     [SerializeField] float velocity = 0.3f;
+    [SerializeField] float timeOffset = 0.0f;
     Vector3 localRight;
     Rigidbody rb;
     Vector3 offset = new Vector3(0,0,0);
@@ -21,9 +22,9 @@ public class Computer : MonoBehaviour
         if (diskVariable.value != null)
         {
             
-            offset.x = K * Mathf.Cos(Time.time);
-            offset.y = K * Mathf.Cos(Time.time +  (Mathf.PI/2));
-            offset.z = K * Mathf.Cos(Time.time +  Mathf.PI);
+            offset.x = K * Mathf.Cos(Time.time+timeOffset);
+            offset.y = K * Mathf.Cos(Time.time +  (Mathf.PI/2)+timeOffset);
+            offset.z = K * Mathf.Cos(Time.time +  Mathf.PI+timeOffset);
 
             Vector3 this2disk = diskVariable.value.transform.position - this.transform.position;
             this2disk = this2disk + offset;
