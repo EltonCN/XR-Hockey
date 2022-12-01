@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("GameManager")]
     [SerializeField] TextMeshProUGUI diskCountdownText;
+    [SerializeField] Canvas guideUI;
     [SerializeField] Transform diskSpawn;
     [SerializeField] GameObject diskPrefab;
     [SerializeField] Transform playerSpawn;
@@ -13,22 +16,53 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject computerPrefab;
     [SerializeField] Transform computerSpawn;
     [SerializeField] AudioSource restartAudio;
+    [SerializeField] UnityEvent startGameEvent;
+
+    [Header("EndGame")]
+    [SerializeField] float maxTime;
+    [SerializeField] int maxPoints;
+    [SerializeField] int maxLifes;
+    [SerializeField] IntVariable pointsVariable;
+    [SerializeField] IntVariable lifesVariable;
+    [SerializeField] FloatVariable gameTimeVariable;
+    [SerializeField] float countdownAudioStart;
+    [SerializeField] AudioSource countdownAudio;
+    [SerializeField] UnityEvent winGameEvent;
+    [SerializeField] UnityEvent looseGameEvent;
     
     private GameObject disk;
+    private Rigidbody diskRigidbody;
     private GameObject player;
     private GameObject computer;
+    private float lastUpdateTime;
+    private bool playing;
+    bool respawningDisk = false;
 
-    bool respawningDisk;
-
-    void Start()
+    void Update()
     {
-        Restart();
-        respawningDisk = false;
+        playing = (disk != null && diskRigidbody.velocity.sqrMagnitude > 0.0f);
+
+        if(playing)
+        {
+            gameTimeVariable.value -= Time.time - lastUpdateTime;
+            if(gameTimeVariable.value <= countdownAudioStart && ! countdownAudio.isPlaying)
+                countdownAudio.Play();
+        }
+        else if(countdownAudio.isPlaying)
+        {
+            countdownAudio.Pause();
+        }
+
+        CheckForGameEnd();
+
+        lastUpdateTime = Time.time;
     }
 
-    void OnEnable()
+    public void StartGame()
     {
-        respawningDisk = false;
+        StopAllCoroutines();
+        startGameEvent.Invoke();
+        StartCoroutine(StartGameCoroutine());
     }
 
     public void Restart()
@@ -41,10 +75,66 @@ public class GameManager : MonoBehaviour
         player.transform.parent = this.transform;
         computer.transform.parent = this.transform;
 
-
         StartCoroutine(DiskCountdown());
     }
 
+    public void Goal()
+    {
+        Destroy(disk);
+
+        if (!CheckForGameEnd())
+            StartCoroutine(DiskCountdown());
+    }
+
+    private bool CheckForGameEnd()
+    {
+        bool isEndGame = false;
+
+        if(pointsVariable.value >= maxPoints)
+        {
+            EndGame();
+            winGameEvent.Invoke();
+            isEndGame = true;
+        }
+        else if(gameTimeVariable.value <= 0 || lifesVariable.value == 0)
+        {
+            EndGame();
+            looseGameEvent.Invoke();
+            isEndGame = true;
+        }
+
+        return isEndGame;
+    }
+
+    private void EndGame()
+    {
+        DestroyElements();
+        RestartVariables();
+    }
+
+    private void DestroyElements()
+    {
+        GameObject[] elements = {player, computer, disk};
+
+        foreach(GameObject go in elements)
+        {
+            if(go != null)
+            {
+                Destroy(go);
+            }
+        }
+    }
+
+    private void RestartVariables()
+    {
+        countdownAudio.Stop();
+        lastUpdateTime = Time.time;
+        pointsVariable.value = 0;
+        lifesVariable.value = maxLifes;
+        gameTimeVariable.value = maxTime;
+    }
+
+    #region Coroutines
     IEnumerator DiskCountdown()
     {
         if(respawningDisk)
@@ -69,27 +159,20 @@ public class GameManager : MonoBehaviour
         diskCountdownText.gameObject.transform.parent.gameObject.SetActive(false);
 
         disk = Instantiate(diskPrefab, diskSpawn);
+        diskRigidbody = disk.GetComponent<Rigidbody>();
 
         respawningDisk = false;
     }
 
-    public void Goal()
+    IEnumerator StartGameCoroutine()
     {
-        Destroy(disk);
-        StartCoroutine(DiskCountdown());
-    }
+        guideUI.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        guideUI.gameObject.SetActive(false);
 
-    public void DestroyElements()
-    {
-        GameObject[] elements = {player, computer, disk};
-
-        foreach(GameObject go in elements)
-        {
-            if(go != null)
-            {
-                Destroy(go);
-            }
-        }
+        RestartVariables();
+        Restart();
     }
+    #endregion
 
 }
