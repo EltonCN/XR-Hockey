@@ -66,7 +66,7 @@ public class SetVelocity : MonoBehaviour
 
         if(Time.time - startTime > delay)
         {
-            rb.velocity = velocity;
+            rb.velocity = this.transform.TransformDirection(velocity);
             done = true;
 
             this.enabled = false;
