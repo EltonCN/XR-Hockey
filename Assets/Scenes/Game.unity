@@ -368,6 +368,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 964065782, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: floatingMenu
+      value: 
+      objectReference: {fileID: 964065780}
+    - target: {fileID: 964065782, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: tableVariable
+      value: 
+      objectReference: {fileID: 11400000, guid: 54f6c59b8a6c10c428ec1375341b313b, type: 2}
+    - target: {fileID: 964065782, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: changeFloatingMenu
+      value: 
+      objectReference: {fileID: -2098020438248333733, guid: 3b8161acd44bb4e9489a58e42924c914, type: 3}
     - target: {fileID: 1870929919915169605, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -429,12 +441,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011537754082886880, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011537754082886880, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011537754082886880, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011537754082886910, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: m_Text
+      value: 'The "Player" side must be facing you
+
+        Click Menu to set the
+        position'
       objectReference: {fileID: 0}
     - target: {fileID: 6011537754149340948, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_SizeDelta.y
@@ -532,6 +555,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6011537755493628579, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: m_Text
+      value: 'Control the position with your head
+
+        Rotate the table using
+        the smartphone touchpad'
+      objectReference: {fileID: 0}
     - target: {fileID: 6011537755493628581, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -545,6 +575,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011537755493628581, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011537755493628581, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -554,6 +588,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+--- !u!1 &964065780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6011537755560004251, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
+  m_PrefabInstance: {fileID: 964065779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964065783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6011537755484930537, guid: 2fdc03b4861d2524a9cdf0616e7a3ce6, type: 3}
@@ -1231,6 +1270,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 373053281}
     - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: tableVariable
+      value: 
+      objectReference: {fileID: 11400000, guid: 54f6c59b8a6c10c428ec1375341b313b, type: 2}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
       propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1835607643}
@@ -1251,6 +1314,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 160224831}
     - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 964065780}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
       propertyPath: onCreateWithPlane.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 373053282}
@@ -1266,5 +1333,69 @@ PrefabInstance:
       propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 373053282}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 964065780}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 373053282}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetPlaneDetection
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ARPlaneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onCreateBothModes.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170098604488698458, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}
+      propertyPath: onRestoreWithPlane.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37eb6d33ffcd0244491513b831e07047, type: 3}

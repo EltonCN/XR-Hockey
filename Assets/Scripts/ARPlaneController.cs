@@ -7,11 +7,13 @@ using UnityEngine.XR.ARFoundation;
 public class ARPlaneController : MonoBehaviour
 {
     ARPlaneManager planeManager;
+    ARSession session;
     GameObject prefab;
 
     void Start()
     {
         planeManager = GetComponent<ARPlaneManager>();
+        session = FindObjectOfType<ARSession>();
     }
 
 
@@ -39,6 +41,16 @@ public class ARPlaneController : MonoBehaviour
         foreach (var plane in planeManager.trackables)
         {
             plane.gameObject.SetActive(true);
+        }
+    }
+
+    public void ResetPlaneDetection()
+    {
+        session.Reset();
+
+        foreach (var plane in planeManager.trackables)
+        {
+            Destroy(plane.gameObject);
         }
     }
 }
