@@ -23,6 +23,8 @@ public class CreateAnchor : MonoBehaviour
 
     [SerializeField] bool withoutPlaneMode;
 
+    [SerializeField] GameObjectVariable tableVariable;
+
     bool haveReference;
 
     GameObject prefabInstance;
@@ -82,6 +84,8 @@ public class CreateAnchor : MonoBehaviour
 
         prefabInstance = Instantiate(prefabToAttach, ghostTarget.transform.position, ghostTarget.transform.rotation);
         prefabInstance.AddComponent<ARAnchor>();
+
+        tableVariable.value = prefabInstance;
 
         if(!withoutPlaneMode)
             onCreateWithPlane.Invoke(prefabInstance);

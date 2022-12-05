@@ -1,15 +1,22 @@
 using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject GazePointer;
 
+    [SerializeField] GameObject floatingMenu;
+
     [SerializeField] UnityEvent onRestartPositionSelection;
 
     [SerializeField] UnityEvent onRestartGame;
+
+    [SerializeField] InputActionReference changeFloatingMenu;
+
+    [SerializeField] GameObjectVariable tableVariable;
 
     protected virtual bool ResetSessionOriginOnStart => true;
 
@@ -27,6 +34,24 @@ public class GameController : MonoBehaviour
         if (ResetSessionOriginOnStart && !_isSessionOriginMoved && _camera.position != Vector3.zero) {
             OffsetSessionOrigin();
             _isSessionOriginMoved = true;
+        }
+    }
+
+    void OnEnable()
+    {
+        changeFloatingMenu.action.performed += this.ChangeFloatingMenuVisibility;
+    }
+
+    void OnDisable()
+    {
+        changeFloatingMenu.action.performed -= this.ChangeFloatingMenuVisibility;
+    }
+
+    private void ChangeFloatingMenuVisibility(InputAction.CallbackContext context)
+    {
+        if(tableVariable.value != null)
+        {
+            floatingMenu.SetActive(!floatingMenu.activeSelf);
         }
     }
 
