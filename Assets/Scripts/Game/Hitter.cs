@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for the logic of the hitters, controlling the speed of movement 
+/// and the speed of the disk when there is a collision.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class Hitter : MonoBehaviour
 {
@@ -23,7 +27,6 @@ public class Hitter : MonoBehaviour
 
     void Update()
     {
-
         velocity = (this.transform.position - previousPosition) / (Time.time-lastTime);
 
         lastTime = Time.time;

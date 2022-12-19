@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class is responsible for following the position of the camera.
+/// </summary>
 public class CameraCaster : MonoBehaviour
 {
     [Tooltip("Layers that can be hit by the camera.")]
@@ -34,7 +37,6 @@ public class CameraCaster : MonoBehaviour
                 debugLineRenderer.positionCount = 2;
                 debugLineRenderer.SetPosition(0, origin);
                 debugLineRenderer.SetPosition(1, 100*direction);
-
             }
         }
         

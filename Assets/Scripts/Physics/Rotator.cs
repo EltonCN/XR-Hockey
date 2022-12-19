@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
+/// <summary>
+/// This class is responsible for rotating an object when an event is triggered.
+/// </summary>
 public class Rotator : MonoBehaviour
 {
     [Tooltip("Input action to rotate target. Must be a Vector2 between [-1, -1] and [1, 1].")]

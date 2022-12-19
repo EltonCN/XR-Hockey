@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
+/// <summary>
+/// This class is responsible for controlling the AR plane manager, disabling and enabling plane detection.
+/// </summary>
 [RequireComponent(typeof(ARPlaneManager))]
 public class ARPlaneController : MonoBehaviour
 {

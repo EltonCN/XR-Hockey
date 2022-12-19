@@ -20,6 +20,9 @@ public class RandomVelocitySettings
     [SerializeField] public Axis rotationAxis;
 }
 
+/// <summary>
+/// This class is responsible for assigning a random speed to an object.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class SetVelocity : MonoBehaviour
 {

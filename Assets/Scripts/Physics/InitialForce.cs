@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for assigning an initial force to an object.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class InitialForce : MonoBehaviour
 {

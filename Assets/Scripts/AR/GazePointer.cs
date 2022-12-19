@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// This class is a modification of the sdk's GazePointer class, correcting a bug in pointer visualization.
+/// </summary>
 public class GazePointer : MonoBehaviour
 {
     [Range(-1.0f, 1.0f)]

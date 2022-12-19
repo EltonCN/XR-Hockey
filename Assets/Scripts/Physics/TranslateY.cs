@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
+/// <summary>
+/// This class is responsible for changing the position on the y axis when an event is triggered.
+/// </summary>
 public class TranslateY : MonoBehaviour
 {
     [SerializeField] InputActionReference rotateAction;

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This class is responsible for displaying in the UI (TextMeshProUGUI) the value of a IntVariable object.
+/// </summary>
 [RequireComponent(typeof(TextMeshProUGUI))]
-public class SyncTextWithVariable : MonoBehaviour
+public class SyncTextWithIntVariable : MonoBehaviour
 {
-    [SerializeField] FloatVariable variable;
+    [SerializeField] IntVariable variable;
     
     TextMeshProUGUI text;
 
-    float prevValue;
+    int prevValue;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +36,7 @@ public class SyncTextWithVariable : MonoBehaviour
 
     void updateText()
     {
-        text.text = ((int) variable.value).ToString();
+        text.text = variable.value.ToString();
         text.SetAllDirty();
     }
 

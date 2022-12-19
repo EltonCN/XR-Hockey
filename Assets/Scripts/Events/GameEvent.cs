@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls a list of game event listeners from Unity.
+/// </summary>
 [CreateAssetMenu(menuName = "ScriptableObjects/GameEvent")]
 public class GameEvent : ScriptableObject
 {

@@ -7,6 +7,11 @@ using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class is responsible for controlling the choice of table position, displaying the ghost table that 
+/// the user can move. Also being responsible for instantiating and anchoring the game table when the spawn 
+/// action is triggered.
+/// </summary>
 public class CreateAnchor : MonoBehaviour
 {
     [SerializeField] ARAnchorManager anchorManager;

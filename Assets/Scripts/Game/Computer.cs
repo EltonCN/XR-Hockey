@@ -1,4 +1,8 @@
 using UnityEngine;
+
+/// <summary>
+/// This class is responsible for autonomously controlling the movement of a hitter.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class Computer : MonoBehaviour
 {

@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Linq;
 
+/// <summary>
+/// This class is responsible for playing an audio whenever there is a collision.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class PlayAudioOnHit : MonoBehaviour
 {

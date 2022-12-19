@@ -4,19 +4,22 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class is responsible for controlling general game settings, such as menu visibility and resetting the table position.
+/// </summary>
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject GazePointer;
 
-    [SerializeField] GameObject floatingMenu;
+    [SerializeField] private GameObject floatingMenu;
 
-    [SerializeField] UnityEvent onRestartPositionSelection;
+    [SerializeField] private UnityEvent onRestartPositionSelection;
 
-    [SerializeField] UnityEvent onRestartGame;
+    [SerializeField] private UnityEvent onRestartGame;
 
-    [SerializeField] InputActionReference changeFloatingMenu;
+    [SerializeField] private InputActionReference changeFloatingMenu;
 
-    [SerializeField] GameObjectVariable tableVariable;
+    [SerializeField] private GameObjectVariable tableVariable;
 
     protected virtual bool ResetSessionOriginOnStart => true;
 

@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class is responsible for managing the main logic of the hockey game, controlling the start, end and restart of the game.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     [Header("GameManager")]

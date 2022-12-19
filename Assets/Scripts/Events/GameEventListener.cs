@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class implements a serializable game event listener.
+/// </summary>
 public class GameEventListener: MonoBehaviour
 {
     [SerializeField] GameEvent gameEvent;

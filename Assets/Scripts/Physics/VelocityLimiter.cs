@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for assigning a maximum and minimum limit to the speed of an object that has a rigidbody component.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class VelocityLimiter : MonoBehaviour
 {
