@@ -9,6 +9,7 @@ using TMPro;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class SyncTextWithVariable : MonoBehaviour
 {
+    [Tooltip("FloatVariable that will have the value shown.")]
     [SerializeField] FloatVariable variable;
     
     TextMeshProUGUI text;

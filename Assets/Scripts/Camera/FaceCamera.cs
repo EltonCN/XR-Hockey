@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Makes the Game Object always face the camera.
+/// </summary>
 public class FaceCamera : MonoBehaviour
 {
+    [Tooltip("If should ignore the X axis when rotating the object.")]
     [SerializeField] bool ignoreXAxis = false;
+
+    [Tooltip("If should ignore the Y axis when rotating the object.")]
     [SerializeField] bool ignoreYAxis = false;
+
+    [Tooltip("If should ignore the Z axis when rotating the object.")]
     [SerializeField] bool ignoreZAxis = false;
 
     Vector3 originalAngles;

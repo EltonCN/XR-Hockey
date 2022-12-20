@@ -8,8 +8,13 @@ using UnityEngine;
 /// </summary>
 public class Goal : MonoBehaviour
 {
+    [Tooltip("The variable that stores the player points.")]
     [SerializeField] IntVariable poinstsVariable;
+
+    [Tooltip("Points added when a goal happens")]
     [SerializeField] int points;
+
+    [Tooltip("Game Event to call when a goal happens")]
     [SerializeField] GameEvent onGoal;
 
     private void OnCollisionEnter(Collision collision)

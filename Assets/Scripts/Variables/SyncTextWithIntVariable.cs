@@ -9,6 +9,7 @@ using TMPro;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class SyncTextWithIntVariable : MonoBehaviour
 {
+    [Tooltip("IntVariable that will have the value shown.")]
     [SerializeField] IntVariable variable;
     
     TextMeshProUGUI text;

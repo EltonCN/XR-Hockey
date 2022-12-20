@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 /// <summary>
-/// This class is responsible for rotating an object when an event is triggered.
+/// This class is responsible for rotating the object using an action.
 /// </summary>
 public class Rotator : MonoBehaviour
 {
@@ -30,6 +30,10 @@ public class Rotator : MonoBehaviour
         rotateAction.action.performed -= this.ReceiveRotateAction;
     }
 
+    /// <summary>
+    /// Receives the action and rotates the game object.
+    /// </summary>
+    /// <param name="context">The CallbackContext of the action. Must have a Vector2 value.</param>
     public void ReceiveRotateAction(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();

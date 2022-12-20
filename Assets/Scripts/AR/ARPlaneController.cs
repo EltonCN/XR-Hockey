@@ -19,18 +19,26 @@ public class ARPlaneController : MonoBehaviour
         session = FindObjectOfType<ARSession>();
     }
 
-
+    /// <summary>
+    /// Removes the prefab from the Plane Manager
+    /// </summary>
     public void RemoveManagerPrefab()
     {
         prefab = planeManager.planePrefab;
         planeManager.planePrefab = null;
     }
 
+    /// <summary>
+    /// Restaures the original prefab of the Plane Manager
+    /// </summary>
     public void RestaureManagerPrefab()
     {
         planeManager.planePrefab = prefab;
     }
 
+    /// <summary>
+    /// Disable all previous detected planes game objects
+    /// </summary>
     public void DisableAllPlaneObjects()
     {
         foreach (var plane in planeManager.trackables)
@@ -39,6 +47,9 @@ public class ARPlaneController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enable all previou detected planes game objects
+    /// </summary>
     public void EnableAllPlaneObjects()
     {
         foreach (var plane in planeManager.trackables)
@@ -47,6 +58,9 @@ public class ARPlaneController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reset the plane detection. DOES NOT WORK.
+    /// </summary>
     public void ResetPlaneDetection()
     {
         session.Reset();

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enum to store axis names, for better inspector.
+/// </summary>
 public enum Axis
 {
     X = 0,
@@ -9,25 +12,44 @@ public enum Axis
     Z = 2
 }
 
+/// <summary>
+/// Stores all the settings to create a random velocity.
+/// </summary>
 [System.Serializable]
 public class RandomVelocitySettings
 {
+    [Tooltip("If should use a random velocity.")]
     [SerializeField] public bool randomVelocity;
+
+    [Tooltip("The minimum magnitude of the velocity.")]
     [SerializeField] public float randomMagnitudeMin;
+
+    [Tooltip("The maximum magnitude of the velocity.")]
     [SerializeField] public float randomMagnitudeMax;
-    [SerializeField][Tooltip("Minimum rotation angle, in degrees")] public float randomAngleMin;
-    [SerializeField][Tooltip("Maximum rotation angle, in degrees")] public float randomAngleMax;
+
+    [Tooltip("The minimum rotation angle, in degrees")]
+    [SerializeField] public float randomAngleMin;
+
+    [Tooltip("The maximum rotation angle, in degrees")]
+    [SerializeField] public float randomAngleMax;
+
+    [Tooltip("Around which axis should the velocity be rotated")]
     [SerializeField] public Axis rotationAxis;
 }
 
 /// <summary>
-/// This class is responsible for assigning a random speed to an object.
+/// This class is responsible for assigning a velocity to an object.
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class SetVelocity : MonoBehaviour
 {
+    [Tooltip("The velocity to assign (if not random).")]
     [SerializeField] Vector3 velocity;
+
+    [Tooltip("Time after the enable to wait before assiging the velocity.")]
     [SerializeField] float delay = 1f;
+
+    [Tooltip("Settings for assiging a random velocity.")]
     [SerializeField] RandomVelocitySettings randomVelocitySettings;
 
     Rigidbody rb;

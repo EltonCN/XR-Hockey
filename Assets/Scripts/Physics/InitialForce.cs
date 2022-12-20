@@ -8,7 +8,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class InitialForce : MonoBehaviour
 {
+    [Tooltip("Force to assign.")]
     [SerializeField] Vector3 force;
+
+    [Tooltip("Time after enable it will wait before assigning the force.")]
     [SerializeField] float delay = 1f;
 
     Rigidbody rb;

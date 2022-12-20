@@ -8,7 +8,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class VelocityLimiter : MonoBehaviour
 {
+    [Tooltip("The minimum object velocity.")]
     [SerializeField] float minVelocity;
+
+    [Tooltip("The maximum object velocity.")]
     [SerializeField] float maxVelocity;
     Rigidbody rb;
     

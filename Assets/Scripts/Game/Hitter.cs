@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class is responsible for the logic of the hitters, controlling the speed of movement 
-/// and the speed of the disk when there is a collision.
+/// This class is responsible for the logic of the hitters.
 /// </summary>
+/// 
+/// <remarks>
+/// It controls the speed of movement and the speed of the disk when there is a collision.
+/// </remarks>
 [RequireComponent(typeof(Rigidbody))]
 public class Hitter : MonoBehaviour
 {
+    [Tooltip("The layers that can be hit by the hitter")]
     [SerializeField] LayerMask hittableLayers;
+
+    [Tooltip("The velocity multiplier to apply when hits something.")]
     [SerializeField] float multiplier = 1f;
     Vector3 previousPosition;
     float lastTime;

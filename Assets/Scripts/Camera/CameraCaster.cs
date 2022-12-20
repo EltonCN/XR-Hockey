@@ -20,6 +20,8 @@ public class CameraCaster : MonoBehaviour
     
     [Tooltip("Show the caster array for debugging.")]
     [SerializeField] bool showDebugRay = false;
+    
+    [Tooltip("Line rendered component to render debug cast direction.")]
     [SerializeField] LineRenderer debugLineRenderer;
 
     void Update()

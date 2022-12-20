@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Implements the player defender behaviour (follow the camera). 
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class Defender : MonoBehaviour
 {
@@ -26,7 +29,7 @@ public class Defender : MonoBehaviour
         RaycastHit hit;
         if(!rb.SweepTest(movement, out hit, movement.magnitude)) //Check if will not collide in anything
         {
-            //rb.MovePosition(targetPosition); Doesn't work. Wrong coordinate space?
+            //rb.MovePosition(targetPosition); Doesn't work. Wrong coordinate space? (It was probably the movement restrictions on some axes)
             transform.position = targetPosition;
         }
         

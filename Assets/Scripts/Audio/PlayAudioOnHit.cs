@@ -8,6 +8,8 @@ using System.Linq;
 public class PlayAudioOnHit : MonoBehaviour
 {
     private AudioSource audioSource;
+    
+    [Tooltip("Tags to ignore when collided with.")]
     [SerializeField] string[] ignoreTags;
 
     void Awake()

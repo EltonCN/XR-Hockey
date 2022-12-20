@@ -8,26 +8,42 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 /// <summary>
-/// This class is responsible for controlling the choice of table position, displaying the ghost table that 
-/// the user can move. Also being responsible for instantiating and anchoring the game table when the spawn 
-/// action is triggered.
+/// This class is reponsible for creating prefabs copies with anchors.
 /// </summary>
+/// 
+/// <remarks>
+/// It uses a ghost target position to create the prefab, allowing to change the
+/// prefab creation position and visualize it before creation.
+/// </remarks>
+/// 
+/// TODO: Change the class name to something closer to use. "AnchoredPrefabManager"? 
 public class CreateAnchor : MonoBehaviour
 {
+    [Tooltip("The active AR Anchor Manager.")]
     [SerializeField] ARAnchorManager anchorManager;
+
+    [Tooltip("The prefab to create and attach the anchor.")]
     [SerializeField] GameObject prefabToAttach;
+
+    [Tooltip("The visible target when the anchor is not created.")]
     [SerializeField] GameObject ghostTarget;
 
+    [Tooltip("The action that will create the prefab.")]
     [SerializeField] InputActionReference createPrefabAction;
 
+    [Tooltip("Actions to do when the prefab is created with or without plane.")]
     [SerializeField] UnityEvent<GameObject> onCreateBothModes;
     
+    [Tooltip("Actions to do only when the prefab is created with a plane reference.")]
     [SerializeField] UnityEvent<GameObject> onCreateWithPlane;
 
+    [Tooltip("Actions to do when the position selection is restoured and uses a plane reference.")]
     [SerializeField] UnityEvent onRestoreWithPlane;
 
+    [Tooltip("If should create the anchor without a plane reference.")]
     [SerializeField] bool withoutPlaneMode;
 
+    [Tooltip("GameObjectVariable to store the created Game Object reference.")]
     [SerializeField] GameObjectVariable tableVariable;
 
     bool haveReference;
@@ -58,6 +74,12 @@ public class CreateAnchor : MonoBehaviour
             ghostTarget.SetActive(false);
     }
 
+    /// <summary>
+    /// Changes the ghost target position to the hit intersection with the plane, if have one. 
+    /// </summary>
+    /// <param name="hit">The raycast hit.</param>
+    /// 
+    /// TODO: Change name to something closer to use. Ex: "ChangeGhostPositionToPlaneHit".
     public void CreateAnchorOnHitPlane(RaycastHit hit)
     {
         if(withoutPlaneMode)
@@ -80,6 +102,10 @@ public class CreateAnchor : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Creates the Game Object copying the prefab and using the ghost transform.
+    /// </summary>
+    /// <param name="context">The action context. Not used.</param>
     public void CreatePrefab(InputAction.CallbackContext context)
     {
         if((!haveReference && !withoutPlaneMode) || this.enabled == false)
@@ -98,6 +124,9 @@ public class CreateAnchor : MonoBehaviour
         onCreateBothModes.Invoke(prefabInstance);
     }
 
+    /// <summary>
+    /// Destroys the previously created object and reactivates the ghost target.
+    /// </summary>
     public void RestorePositionSelection()
     {
         Destroy(prefabInstance);

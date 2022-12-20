@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 /// <summary>
-/// This class is responsible for making a game event serializable.
+/// This class raises a Game Event when enabled.
 /// </summary>
 public class RaiseEvent : MonoBehaviour
 {
+    [Tooltip("Game Event to raise when enabled.")]
     [SerializeField] GameEvent onEnableEvent;
 
     void OnEnable()

@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Qualcomm.Snapdragon.Spaces;
 
+/// <summary>
+/// This class activates an GameObject when the hand grab gesture is done
+/// </summary>
 public class ActivateWithGrab : MonoBehaviour
 {
+    [Tooltip("The GameObject that is activated when either hand grabs.")]
     [SerializeField] GameObject mainGameObject;
+
+    [Tooltip("The GameObject that is activated when the left hand grab.")]
     [SerializeField] GameObject leftObject;
+
+    [Tooltip("The GameObject that is activated when the right hand grab.")]
     [SerializeField] GameObject rightObject;
+
+    [Tooltip("If should enable only one hand GameObject activated at time.")]
     [SerializeField] bool allowOnlyOneHand;
 
     SpacesHandManager handManager;
@@ -15,7 +25,6 @@ public class ActivateWithGrab : MonoBehaviour
     bool leftActive;
     bool rightActive;
 
-    // Start is called before the first frame update
     void Start()
     {
         handManager = FindObjectOfType<SpacesHandManager>();

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Locks object rotation on some axis.
+/// </summary>
 public class FixRotation : MonoBehaviour
 {
+    [Tooltip("Axis to lock (x, y, z).")]
     [SerializeField] bool[] axis = {false, false, false};
 
     Vector3 originalAngles;
