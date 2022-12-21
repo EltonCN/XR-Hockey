@@ -23,7 +23,7 @@
   <td id="projectalign">
    <div id="projectname">XR Hockey<span id="projectnumber">&#160;1.0.1</span>
    </div>
-   <div id="projectbrief">Extended reality air hockey game, created by Unicamp students with the help of Qualcomm.</div>
+   <div id="projectbrief">An augmented reality air hockey game. Made with Unity and the Snapdragon Spaces SDK for the ThinkReality A3 glasses.</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class is responsible for rotating an object when an event is triggered.   
+<p>This class is responsible for rotating the object using an action.   
  <a href="class_rotator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Rotator:</div>
@@ -89,10 +89,11 @@ Inheritance diagram for Rotator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a373049db52f6bc8d8179a4012c3125e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rotator.html#a373049db52f6bc8d8179a4012c3125e9">ReceiveRotateAction</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a373049db52f6bc8d8179a4012c3125e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the action and rotates the game object.   <a href="class_rotator.html#a373049db52f6bc8d8179a4012c3125e9">More...</a><br /></td></tr>
 <tr class="separator:a373049db52f6bc8d8179a4012c3125e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This class is responsible for rotating an object when an event is triggered.  </p>
+<div class="textblock"><p >This class is responsible for rotating the object using an action.  </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a373049db52f6bc8d8179a4012c3125e9" name="a373049db52f6bc8d8179a4012c3125e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a373049db52f6bc8d8179a4012c3125e9">&#9670;&#160;</a></span>ReceiveRotateAction()</h2>
@@ -110,10 +111,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Receives the action and rotates the game object.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>The CallbackContext of the action. Must have a Vector2 value.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Unity/Projetos/Hockey/Assets/Scripts/Physics/<a class="el" href="_rotator_8cs.html">Rotator.cs</a></li>
+<li>Assets/Scripts/Physics/<a class="el" href="_rotator_8cs.html">Rotator.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
