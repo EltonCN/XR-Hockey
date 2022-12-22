@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['raiseevent_0',['RaiseEvent',['../class_raise_event.html',1,'']]],
+  ['raiseevent_2ecs_1',['RaiseEvent.cs',['../_raise_event_8cs.html',1,'']]],
+  ['randomanglemax_2',['randomAngleMax',['../class_random_velocity_settings.html#afc6b4dd01b5a0f7a2cdf2baf31b2daec',1,'RandomVelocitySettings']]],
+  ['randomanglemin_3',['randomAngleMin',['../class_random_velocity_settings.html#a27f99ee188ba4da637fb6a0697fe1c90',1,'RandomVelocitySettings']]],
+  ['randommagnitudemax_4',['randomMagnitudeMax',['../class_random_velocity_settings.html#af1ddffa4a03248756c7906ea663a2cfa',1,'RandomVelocitySettings']]],
+  ['randommagnitudemin_5',['randomMagnitudeMin',['../class_random_velocity_settings.html#a5710aeea4b91479dcc4b28c3de5014d2',1,'RandomVelocitySettings']]],
+  ['randomvelocity_6',['randomVelocity',['../class_random_velocity_settings.html#a325e2e22115c81e2a525daa9ab593b55',1,'RandomVelocitySettings']]],
+  ['randomvelocitysettings_7',['RandomVelocitySettings',['../class_random_velocity_settings.html',1,'']]],
+  ['receiverotateaction_8',['ReceiveRotateAction',['../class_rotator.html#a373049db52f6bc8d8179a4012c3125e9',1,'Rotator']]],
+  ['receivetranslateaction_9',['ReceiveTranslateAction',['../class_translate_y.html#ad4f0d4cc0ef6a7072dc3bf11c8f6d035',1,'TranslateY']]],
+  ['register_10',['Register',['../class_game_event.html#a8e2a082cb49826f267bc3245c8c6d414',1,'GameEvent']]],
+  ['removemanagerprefab_11',['RemoveManagerPrefab',['../class_a_r_plane_controller.html#afad8ff6e65807d3fee8b65859e5be7b4',1,'ARPlaneController']]],
+  ['resetplanedetection_12',['ResetPlaneDetection',['../class_a_r_plane_controller.html#a520e132e19db05d40c67e824cdc57acf',1,'ARPlaneController']]],
+  ['resetsessionoriginonstart_13',['ResetSessionOriginOnStart',['../class_game_controller.html#a8bf88ed8168f5ef39da4b9ec0227dd0c',1,'GameController']]],
+  ['restart_14',['Restart',['../class_game_manager.html#a1cbb012b22180860880a659142a0cd07',1,'GameManager']]],
+  ['restartgame_15',['RestartGame',['../class_game_controller.html#a97aa27223c7f9aa9cd4cb6f84a269bb3',1,'GameController']]],
+  ['restartpositionselection_16',['RestartPositionSelection',['../class_game_controller.html#af39c705a442528e06de069ce80c8d823',1,'GameController']]],
+  ['restauremanagerprefab_17',['RestaureManagerPrefab',['../class_a_r_plane_controller.html#a2f7331cef5eda3bbd3c7210ef45d0e0d',1,'ARPlaneController']]],
+  ['restorepositionselection_18',['RestorePositionSelection',['../class_create_anchor.html#a60ac179f8376e6072f5c4dfa417b438f',1,'CreateAnchor']]],
+  ['reticleouterring_19',['ReticleOuterRing',['../class_gaze_pointer.html#ada80e8ea4f8bd426b899c221f3a6ab69',1,'GazePointer']]],
+  ['rotationaxis_20',['rotationAxis',['../class_random_velocity_settings.html#ad967b1c88c5c5eb3e1b079f5b58f48b5',1,'RandomVelocitySettings']]],
+  ['rotator_21',['Rotator',['../class_rotator.html',1,'']]],
+  ['rotator_2ecs_22',['Rotator.cs',['../_rotator_8cs.html',1,'']]]
+];
